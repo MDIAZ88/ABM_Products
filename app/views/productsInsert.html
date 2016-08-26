@@ -1,0 +1,66 @@
+<article class="container" ng-controller="productsController as productCtrl">
+  <section>
+    <p>
+      <b>
+        {{productCtrl.titles.insert}}
+      </b>
+    </p>
+    <p class="back-btn">
+      <a href="#/products">
+        {{productCtrl.titles.back}}
+      </a>
+    </p>
+  </section>
+  <article>
+    <form class="form-group" name="userForm" ng-submit="insert()" novalidate>
+      <!--Product ID-->
+      <div ng-class="{ 'has-error' : userForm.productID.$invalid && !userForm.productID.$pristine }">
+        <input type="text" name="productID" ng-model="productID" ng-minlength="3" ng-maxlength="8" placeholder="Codigo">
+        <p ng-show="userForm.productID.$error.minlength" class="help-block">{{productCtrl.customTexts.min}}</p>
+        <p ng-show="userForm.productID.$error.maxlength" class="help-block">{{productCtrl.customTexts.max}}</p>
+      </div>
+      <!--Name-->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.productname.$invalid && !userForm.productname.$pristine }">
+        <input type="text" name="productname" ng-model="name" ng-pattern="/^[a-zA-Z\u00C0-\u017F]{2}[\sa-zA-Z'.^\-b\u00C0-\u017F]{1,20}$/" placeholder="Nombre">
+        <p ng-show="userForm.productname.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyTextData}}</p>
+      </div>
+      <!--Description-->
+      <div ng-class="{ 'has-error' : userForm.description.$invalid && !userForm.description.$pristine }">
+        <input type="text" name="description" ng-model="description" ng-pattern="/^[a-zA-Z\u00C0-\u017F]{2}[\sa-zA-Z'.^\-b\u00C0-\u017F]{1,40}$/" placeholder="Descripcion">
+        <p ng-show="userForm.description.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyTextData}}</p>
+      </div>
+      <!--Brand-->
+      <div ng-class="{ 'has-error' : userForm.brand.$invalid && !userForm.brand.$pristine }">
+        <input type="text" name="brand" ng-model="brand" ng-pattern="/^[a-zA-Z\u00C0-\u017F]{2}[\sa-zA-Z'.^\-b\u00C0-\u017F]{1,10}$/" placeholder="Marca">
+        <p ng-show="userForm.brand.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyTextData}}</p>
+      </div>
+      <!--Measurement-->
+      <div ng-class="{ 'has-error' : userForm.measurement.$invalid && !userForm.measurement.$pristine }">
+        <input type="text" name="measurement" ng-model="measurement" ng-pattern="/^[0-9a-zA-Z]{2}[\s0-9a-zA-Z'.^\-b]{1,10}$/" placeholder="Lts">
+        <p ng-show="userForm.measurement.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyTextData}}</p>
+      </div>
+      <!--Unit Price-->
+      <div ng-class="{ 'has-error' : userForm.unitPrice.$invalid && !userForm.unitPrice.$pristine }">
+        <input type="text" name="unitPrice" ng-model="unitPrice" ng-pattern="/^[-+]?[0-9]*\.?[0-9]*$/" placeholder="Precio de costo">
+        <p ng-show="userForm.unitPrice.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyNumberData}}</p>
+      </div>
+      <!--Sale Price-->
+      <div ng-class="{ 'has-error' : userForm.salePrice.$invalid && !userForm.salePrice.$pristine }">
+        <input type="text" name="salePrice" ng-model="salePrice" ng-pattern="/^[-+]?[0-9]*\.?[0-9]*$/" placeholder="Precio de venta">
+        <p ng-show="userForm.salePrice.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyNumberData}}</p>
+      </div>
+      <!--Provider-->
+      <div ng-class="{ 'has-error' : userForm.provider.$invalid && !userForm.provider.$pristine }">
+        <input type="text" name="provider" ng-model="provider" ng-pattern="/^[a-zA-Z\u00C0-\u017F]{2}[\sa-zA-Z'.^\-b\u00C0-\u017F]{1,10}$/" placeholder="Proveedor">
+        <p ng-show="userForm.provider.$error.pattern" class="help-block">{{productCtrl.customTexts.verifyTextData}}</p>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success btn-xs">
+        {{productCtrl.buttonsLabels.insert}}
+      </button>
+      <a class="btn btn-danger  btn-xs" id="cancel" ng-click="cancel()">
+        {{productCtrl.buttonsLabels.cancel}}
+      </a>
+    </form>
+  </article>
+</article>

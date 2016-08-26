@@ -1,0 +1,62 @@
+<div class="modal-header" ng-controller="productsController as productCtrl">
+  <h4>
+    <b>
+      {{productCtrl.titles.delete}}
+    </b>
+  </h4>
+</div>
+<div class="modal-body">
+  <h5 class="deleteCode">
+    <b>
+      {{productCtrl.tableHeader.productID}}: {{product.productID}}
+    </b>
+  </h5>
+  <h6>
+    <b>
+      {{productCtrl.tableHeader.name}}
+    </b>
+  </h6>
+  <h6>
+    {{product.name}}
+  </h6>
+  <h6>
+    <b>
+      {{productCtrl.tableHeader.description}}
+    </b>
+  </h6>
+  <h6>
+    {{product.description}}
+  </h6>
+  <h6>
+    <b>
+      {{productCtrl.tableHeader.brand}}
+    </b>
+  </h6>
+  <h6>
+    {{product.brand}}
+  </h6>
+  <h6>
+    <b>
+      {{productCtrl.tableHeader.measurement}}
+    </b>
+  </h6>
+  <h6>
+    {{product.measurement}}
+  </h6>
+  <h6>
+    <b>
+      {{productCtrl.tableHeader.provider}}
+    </b>
+  </h6>
+  <h6>
+    {{product.provider}}
+  </h6>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="ok(product.productID)">
+      {{productCtrl.buttonsLabels.delete}}
+    </button>
+    <button class="btn btn-warning" ng-click="cancel()">
+      {{productCtrl.buttonsLabels.cancel}}
+    </button>
+</div>

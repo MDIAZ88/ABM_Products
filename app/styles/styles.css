@@ -1,0 +1,29 @@
+p {
+  display: inline-block;
+}
+.back-btn{
+  float: right;;
+}
+.table  tbody .buttonCenter{
+  padding: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+.table thead, tbody tr td{
+  text-align: center;
+}
+form div {
+  margin-top: 20px;
+}
+form div input{
+  display: inline-block;
+}
+form div p{
+  display: inline-block !important;
+}
+.updateCode, .deleteCode{
+  margin-top: 0px;
+}
+.button-center{
+  display: inline-block;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>ABM_Products | App</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body ng-controller="homeController as homeCtrl">
+
+    <header ng-include="'views/components/header.html'"></header>
+
+    <article class="container">
+        <div ng-view></div>
+    </article>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="node_modules/angular-smart-table/dist/smart-table.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/modal.js"></script>
+    <script src="js/controllers/deleteModalInstanceCtrl.js"></script>
+    <script src="js/controllers/updateModalInstanceCtrl.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="config/configuration.js"></script>
+    <script src="js/services/productsService.js"></script>
+    <script src="js/controllers/productsController.js"></script>
+
+  </body>
+</html>

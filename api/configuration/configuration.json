@@ -1,0 +1,35 @@
+{
+  "mongo": {
+      "connection":"mongodb://localhost:27017/",
+      "dataBase":"products"
+  },
+  "server":{
+    "portNumber": 3000,
+    "portCall":"port",
+    "environment":"development",
+    "envCall":"env",
+    "devCall":"dev"
+  },
+  "gulp":{
+    "src":"./**/*.js",
+    "script":"app.js",
+    "ext":"html js",
+    "ignore":["**/node_modules/**/*"]
+  },
+  "cors":{
+    "accesOrigin":"Access-Control-Allow-Origin",
+    "allowOrigins":"*",
+    "accesHeaders":"Access-Control-Allow-Headers",
+    "allowHeaders":"Origin, X-Requested-With, Content-Type, Accept"
+  },
+  "routes":{
+    "root":"/",
+    "insert":"/insert",
+    "update":"/update",
+    "delete":"/delete",
+    "services":"./services/services.js",
+    "route":"./routes/routes.js",
+    "winstonLogger":"./logger/winstonLogger.js",
+    "winLogger":"../logger/winstonLogger.js"
+  }
+}
