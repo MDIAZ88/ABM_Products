@@ -1,0 +1,40 @@
+{
+  "name": "angularapp",
+  "description": "Angular Aplication",
+  "main": "app.js",
+  "authors": [
+    "Marcos Adrian Diaz"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "AngularJS",
+    "SASS",
+    "CSS",
+    "HTML"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "normalize-css": "^4.0.0",
+    "angular-route": "^1.5.3",
+    "angular-bootstrap": "^1.2.5",
+    "angular-modal-service": "^0.10.1",
+    "angular-xeditable": "^0.2.0",
+    "angular-mocks": "^1.5.8"
+  }
+}

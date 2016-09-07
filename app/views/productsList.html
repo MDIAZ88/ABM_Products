@@ -1,0 +1,104 @@
+<article ng-controller="productsController as productCtrl">
+  <section>
+    <a href="#/insert" class="btn btn-sm btn-success">
+      <i class="glyphicon glyphicon-plus"></i>
+      {{productCtrl.titles.insert}}
+    </a>
+    <br></br>
+  </section>
+  <article>
+    <table st-table="displayedCollection" st-safe-src="products" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+  				<th colspan="8">
+            <input st-search="" class="form-control" placeholder="{{productCtrl.titles.search}}" type="text"/>
+          </th>
+  			</tr>
+        <tr class="success">
+          <td st-sort="product.productID">
+            {{productCtrl.tableHeader.productID}}
+          </td>
+          <td st-sort="product.name">
+            {{productCtrl.tableHeader.name}}
+          </td>
+          <td>
+            {{productCtrl.tableHeader.description}}
+          </td>
+          <td>
+            {{productCtrl.tableHeader.brand}}
+          </td>
+          <td>
+            {{productCtrl.tableHeader.measurement}}
+          </td>
+          <td>
+            {{productCtrl.tableHeader.unitPrice}}
+          </td>
+          <td>
+            {{productCtrl.tableHeader.salePrice}}
+          </td>
+          <td st-sort="product.provider">
+            {{productCtrl.tableHeader.provider}}
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+    <tr ng-repeat="product in displayedCollection">
+      <td>
+        <span e-name="productID" e-form="rowform" e-required>
+          {{ product.productID || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.name" e-name="name" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.name || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.description" e-name="description" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.description || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.brand" e-name="brand" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.brand || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.measurement" e-name="measurement" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.measurement || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.unitPrice" e-name="unitPrice" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.unitPrice || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.salePrice" e-name="salePrice" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.salePrice || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="product.provider" e-name="provider" e-form="rowform" onaftersave="update(product)" e-required>
+          {{ product.provider|| 'empty' }}
+        </span>
+      </td>
+      <td style="white-space: nowrap">
+        <form editable-form name="rowform" onaftersave="update(product)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == product">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-success glyphicon glyphicon-ok"></button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-warning glyphicon glyphicon-remove-circle"></button>
+        </form>
+        <div class="buttons button-center" ng-show="!rowform.$visible">
+          <div ng-controller="ModalCtrl" class="button-center">
+            <button class="btn btn-primary glyphicon glyphicon-pencil" ng-click="rowform.$show()"></button>
+          </div>
+          <div ng-controller="ModalCtrl" class="button-center">
+            <button class="btn btn-danger  glyphicon glyphicon-remove" ng-click="showDeleteModal(product)"></button>
+          </div>
+        </div>
+      </td>
+    </tr>
+      </tbody>
+    </table>
+  </article>
+</article>
